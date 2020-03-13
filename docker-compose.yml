@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  scrapy:
+    image: joehwang/crawl
+    ports:
+      - "7533:7533"
+    environment:
+        MYENV1: ajgjkadskfj
+        MYENV2: GXKDFKK
+        LANG: C.UTF-8
+    volumes:
+      - ./:/crawl
+    working_dir: /crawl
+      #- ./mysql_data/my.cnf:/etc/mysql/my.cnf

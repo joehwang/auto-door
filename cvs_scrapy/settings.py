@@ -19,7 +19,8 @@ NEWSPIDER_MODULE = 'cvs_scrapy.spiders'
 #USER_AGENT = 'cvs_scrapy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+DOWNLOAD_DELAY = 3  
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

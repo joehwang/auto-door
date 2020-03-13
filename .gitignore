@@ -1,0 +1,5 @@
+*.pyc
+cvs_scrapy/__pycache__/*
+*.csv
+cvs_scrapy/spiders/__pycache__/hilife.cpython-36.pyc
+cvs_scrapy/__pycache__/settings.cpython-36.pyc
