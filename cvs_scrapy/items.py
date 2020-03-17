@@ -18,4 +18,5 @@ class CvsScrapyItem(scrapy.Item):
     addr = scrapy.Field()
     phone = scrapy.Field()
     note = scrapy.Field()
-    pass
+    ship_status= scrapy.Field()
+
