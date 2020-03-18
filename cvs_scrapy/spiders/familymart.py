@@ -5,7 +5,7 @@ from cvs_scrapy.items import CvsScrapyItem
 import json
 class Familymart(scrapy.Spider):
     name = "familymart"
-    DEBUG=0
+    DEBUG=1
     _citys=[]
     #https://api.map.com.tw/net/familyShop.aspx?searchType=ShopList&type=&city=%E6%BE%8E%E6%B9%96%E7%B8%A3&area=%E9%A6%AC%E5%85%AC%E5%B8%82&road=&fun=showStoreList&key=6F30E8BF706D653965BDE302661D1241F8BE9EBC
     def start_requests(self):
@@ -26,7 +26,7 @@ class Familymart(scrapy.Spider):
             url="https://api.map.com.tw/net/familyShop.aspx?searchType=ShopList&type=&city={}&area=&road=&fun=showStoreList&key=6F30E8BF706D653965BDE302661D1241F8BE9EBC".format(city)
             yield scrapy.Request(url=url, headers=headers,callback=self.get_shop_of_citys)
             if self.DEBUG==1:
-               return
+               return None
         self.log("***********")
     def get_shop_of_citys(self, response):
         
