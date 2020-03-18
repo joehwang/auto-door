@@ -56,5 +56,7 @@ class Hilife(scrapy.Spider):
             item["name"]=tr.xpath('th[2]/text()').get()
             item["phone"]=tr.xpath('td[2]/text()').get()
             item["addr"]=tr.xpath('td[1]/a/text()').get()
+            item["ship_status"]=""
             item["note"]=tr.xpath('td[1]/img[@title]/@title').extract()
+            item["kind"]="hilife"
             yield item

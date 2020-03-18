@@ -52,6 +52,7 @@ class Okmart(scrapy.Spider):
             item["addr"]=response.xpath('//*[@name="form1"]/ul/li[1]/text()').get()
             item["ship_status"]=response.xpath('//*[@name="form1"]/ul/li[5]/text()').get().strip()
             item["note"]=response.xpath('//*[@name="form1"]/ul/li/span[@class="food"]/text()').extract()
-            self.log(item["note"])
+            item["kind"]="okmart"
+            #self.log(item["note"])
             yield item
             

@@ -48,6 +48,7 @@ class Familymart(scrapy.Spider):
         item["addr"]=shop["post"]+shop["addr"]
         item["ship_status"]=""
         item["note"]=shop["all"]
+        item["kind"]="familymart"
         return item
             
 
