@@ -10,7 +10,8 @@ import re
 class CvsScrapyPipeline(object):
 	def process_item(self, item, spider):
 		if item.get("addr"):
-			item["tags"]=re.findall(r"(\D*[縣市])?(\D*[區鎮鄉市])?(\D*[村里])?(\D*[路大道街])", item["addr"])
+			tags=re.findall(r"(\D*[縣市])?(\D*[區鎮鄉市])?(\D*[村里])?(\D*[路大道街])", item["addr"])
+			item["tags"]=",".join(filter(None, [a for b in tags for a in b]))
 			#(\D*[縣市])(\D*[區鎮鄉市])(\D*[路大道街])
 			return item
 #行政區名稱	街道名稱	門牌
