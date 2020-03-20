@@ -8,7 +8,27 @@ services:
         MYENV1: ajgjkadskfj
         MYENV2: GXKDFKK
         LANG: C.UTF-8
+        REDISPWD: "@7533967"
     volumes:
       - ./:/crawl
     working_dir: /crawl
       #- ./mysql_data/my.cnf:/etc/mysql/my.cnf
+  redis:
+    image: redis
+    command: redis-server --requirepass @7533967
+    #ports:
+    #  - '6380:6380'
+    hostname: redis
+    volumes:
+      - ./redis_data:/data
+
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      REDIS_HOST: "redis"
+      REDIS_PASSWORD: "@7533967"
+    ports:
+    - "8081:8081"

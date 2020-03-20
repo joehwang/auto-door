@@ -26,7 +26,7 @@ class Hilife(scrapy.Spider):
                                                 '__EVENTVALIDATION': response.css('input#__EVENTVALIDATION::attr(value)').extract_first()
                                                 },dont_filter=True,callback=self.get_areas_into_city)
             if self.DEBUG==1:
-                return
+                return None
         self.log("***********")
     def get_citys(self,response):
         return response.xpath('//*[@id="CITY"]/option/text()').extract()
