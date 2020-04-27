@@ -1,34 +1,39 @@
 version: "3.2"
 services:
   scrapy:
-    image: joehwang/crawl
+    image: joehwang/tw-cvs-crawl
     ports:
       - "7533:7533"
     environment:
-        MYENV1: ajgjkadskfj
-        MYENV2: GXKDFKK
+        MYENV1: envtest1
+        MYENV2: envtest2
         LANG: C.UTF-8
         REDISPWD: "@7533967"
     volumes:
       - ./:/crawl
+      - ./crawl_output:/crawl_output
     working_dir: /crawl
+    depends_on: 
+      - redis
       #- ./mysql_data/my.cnf:/etc/mysql/my.cnf
   redis:
     image: redis
     command: redis-server --requirepass @7533967
-    #ports:
-    #  - '6380:6380'
+    ports:
+      - '6379:6379'
     hostname: redis
     volumes:
       - ./redis_data:/data
 
-  redis-commander:
-    container_name: redis-commander
-    hostname: redis-commander
-    image: rediscommander/redis-commander:latest
-    restart: always
-    environment:
-      REDIS_HOST: "redis"
-      REDIS_PASSWORD: "@7533967"
-    ports:
-    - "8081:8081"
+  #redis-commander:
+  #  container_name: redis-commander
+  #  hostname: redis-commander
+  #  image: rediscommander/redis-commander:latest
+  #  restart: always
+  #  environment:
+  #    REDIS_HOST: "redis"
+  #    REDIS_PASSWORD: "@7533967"
+  #  ports:
+  #  - "8081:8081"
+  #  depends_on: 
+  #  - redis

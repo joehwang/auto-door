@@ -5,7 +5,7 @@ from scrapy.http import FormRequest
 from cvs_scrapy.items import CvsScrapyItem
 class Hilife(scrapy.Spider):
     name = "hilife"
-    DEBUG=1
+    DEBUG=0
     _citys=[]
     def start_requests(self):
         urls = [
@@ -32,7 +32,7 @@ class Hilife(scrapy.Spider):
         return response.xpath('//*[@id="CITY"]/option/text()').extract()
 
     def get_areas_into_city(self,response):
-        self.log("55555555555555555555555555")
+        self.log("************")
         areas=response.xpath('//*[@id="AREA"]/option/text()').extract()
         city=response.xpath('//*[@id="lblCity"]/text()').extract()[0]
         self.log("{}的所有行政區{}".format(city,areas))
