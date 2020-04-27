@@ -2,3 +2,5 @@
 cvs_scrapy/__pycache__/*
 *.csv
 *.pyc
+*.rdb
+redis_data/.DS_Store

@@ -19,8 +19,6 @@ services:
   redis:
     image: redis
     command: redis-server --requirepass @7533967
-    ports:
-      - '6379:6379'
     hostname: redis
     volumes:
       - ./redis_data:/data
