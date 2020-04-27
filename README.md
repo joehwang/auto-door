@@ -1,6 +1,6 @@
 ## 
 
-![image](picture or gif url)
+![image](https://github.com/joehwang/auto-door/blob/master/doc/kv.gif?raw=true)
 
 ## 說明
 
