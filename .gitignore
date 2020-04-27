@@ -4,3 +4,4 @@ cvs_scrapy/__pycache__/*
 *.pyc
 *.rdb
 redis_data/.DS_Store
+.DS_Store
