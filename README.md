@@ -1,10 +1,13 @@
+# auto-door 台灣四大超商爬蟲
+
+台灣4大超商店鋪資料爬蟲，使用python/scrapy框架
+支援`7-11` `全家` `萊爾富` `okmart`資料抓取
+
 ## 
 
 ![image](https://github.com/joehwang/auto-door/blob/master/doc/kv.gif?raw=true)
 
-## 說明
 
-台灣4大超商店鋪資料爬蟲
 ## 環境
 
 已打包為docker映像檔
