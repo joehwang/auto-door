@@ -5,6 +5,14 @@
 ## 說明
 
 台灣4大超商店鋪資料爬蟲
+## 環境
+
+已打包為docker映像檔
+[[https://hub.docker.com/r/joehwang/tw-cvs-crawl]]
+
+python 3.6
+
+scrapy 2.0
 
 ## 使用
 
